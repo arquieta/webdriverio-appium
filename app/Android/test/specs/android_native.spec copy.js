@@ -1,7 +1,7 @@
-describe ('Android elements test',  () => {
+describe ('Android native features',  () => {
 
     
-    it('Using native elements', async() => {
+    it('Access an activity drectly', async() => {
         
         //access activity
         await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.app.AlertDialogSamples");
@@ -14,19 +14,36 @@ describe ('Android elements test',  () => {
 
     } )
 
-    it.only('Working with dialog boxes', async() => {
+    it('Working with dialog boxes', async() => {
         
-        //access activity
-        await ('//*@r[resource-id="io.appium.android.apis:id/two_buttons"]').click();
+         //access activity
+         await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.app.AlertDialogSamples");
+
+        
+        //Click on first dialog
+        await $('//*[@resource-id="io.appium.android.apis:id/two_buttons"]').click();
+        //get Alert text
+        console.log('Alert text -->', await driver.getAlertText());
 
          //accept Alert
          await driver.acceptAlert();
 
          //Assertion alert message is no longer visible after accepting the dialog popup
-         await expect($('//*@r[resource-id="android:id/alertTitle"]')).not.toExist(); 
+         await expect($('//*[@resource-id="android:id/alertTitle"]')).not.toExist(); 
 
     } )
 
+    it.only('Vertical scrolling', async() => {
+        
+        await $('~App').click();
+        await $('~Activity').click();
+        //scrolling to end. The 1 is how many times to scroll. The 5 is the speed of the scroll
+        await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)');
+
+
+        await $('~Secure Surfaces').click();
+
+   } )
 
 
     
