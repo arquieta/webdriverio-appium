@@ -62,15 +62,50 @@ describe ('Android native features',  () => {
     await expect($('~Secure Dialog')).toExist();
 
 } )
-it.only('Horizontal scrolling until element is displayed', async() => {
+it('Horizontal scrolling until element is displayed', async() => {
         
     //access activity
     await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.Gallery1");
 
     //horizontal scrolling forwards. The 1 is how many times to scroll. The 5 is the speed of the scroll (not recommended)
-    await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()').click();
+    await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()');
+    await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()').click();
 
     await driver.pause(3000);
+
+} )
+
+it.only('Working with Date Picker', async() => {
+        
+    //access activity
+    await driver.startActivity("io.appium.android.apis", 
+                                "io.appium.android.apis.view.DateWidgets1")
+    await expect($('//android.widget.TextView[@text="Views/Date Widgets/1. Dialog"]')).toExist();
+
+    //get current date
+                    
+    const date = await $('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]');
+    const currentDate = await date.getText();
+
+    //Click on change date button
+    await $('~change the date').click();
+
+    //Scroll to the next month
+   await $('~Next month').click();
+   //await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()');
+
+   //Select the twelve day of the month
+   await $('//*[@text="12"]').click();
+
+   //Click on the OK button
+
+   await $('//*[@text="OK"]').click();
+
+
+   
+
+
+
 
 } )
 
