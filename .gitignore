@@ -1,3 +1,2 @@
 node_modules
-node_modules
-app/Android/test/specs/android_findElements.spec.js
+.env
