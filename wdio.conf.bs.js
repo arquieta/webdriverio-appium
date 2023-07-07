@@ -75,8 +75,8 @@ exports.config = {
     services: [['browserstack', {
         testObservability: true,
         testObservabilityOptions: {
-            projectName: "Your project name goes here",
-            buildName: "The static build job name goes here e.g. Nightly regression"
+            projectName: "Training Browserstack with Appium",
+            buildName: "Real app v1"
         },
         browserstackLocal: true
     }]

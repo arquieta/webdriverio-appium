@@ -35,13 +35,9 @@ describe ('Add notes app',  () => {
         await driver.back();
         await driver.back();
 
-
         //assertion that the note is saved
         await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_btn"]')).toBeDisplayed();
         await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/view_note"]')).toHaveText("testing the notes\n adding text with diff command\n");
-
-
-
 
     } )
     it.only('Delete note', async() => {
