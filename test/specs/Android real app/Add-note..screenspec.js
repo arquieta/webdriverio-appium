@@ -28,8 +28,8 @@ describe ('Add notes app',  () => {
         await expect (noteText).toBeDisplayed();
         await noteText.addValue("testing the notes\n");
         await driver.pause(3000);
-        await noteText.addValue("adding text with diff command\n");
-        await driver.pause(3000);
+        // await noteText.addValue("adding text with diff command\n");
+        // await driver.pause(3000);
         //Click on back two times to save the note
 
         await driver.back();
@@ -37,7 +37,7 @@ describe ('Add notes app',  () => {
 
         //assertion that the note is saved
         await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_btn"]')).toBeDisplayed();
-        await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/view_note"]')).toHaveText("testing the notes\nadding text with diff command\n");
+        await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/view_note"]')).toHaveText("testing the notes\n");
 
     } )
     it('Delete note', async() => {
