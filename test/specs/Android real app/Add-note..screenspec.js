@@ -7,7 +7,7 @@ describe ('Add notes app',  () => {
     //     await expect($('//*[@text="Add note"]')).toBeDisplayed();
 
     // } )
-    it('Add a note, save changes and verify it', async() => {
+    it.only('Add a note, save changes and verify it', async() => {
         //click on skip tutorial
         // Replace this with next line await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]').click();
         await AddNoteScreen.SkipBtn.click();
@@ -40,7 +40,7 @@ describe ('Add notes app',  () => {
         await expect($('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/view_note"]')).toHaveText("testing the notes\n adding text with diff command\n");
 
     } )
-    it.only('Delete note', async() => {
+    it('Delete note', async() => {
         //click on skip tutorial
         await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]').click();
         //await expect($('//*[@resourse-id="com.socialnmobile.dictapps.notepad.color.note:id/empty_text"')).toExist();
