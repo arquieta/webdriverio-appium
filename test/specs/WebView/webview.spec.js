@@ -5,12 +5,24 @@ describe ('Web browser access',  () => {
 
 
     it.only('Access external link and verify content in a browser', async() => {
-        await $('//*[@resource-id= "com.socialnmobile.dictapps.notepad.color.note:id/icon_nav"]').click();
+        await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]').click();
+        await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/icon_nav"]').click();
         await $('//*[@text="Like us on Facebook"]').click();
-        await $('//*[@element-id="00000000-0000-000f-0000-0adc00000071"]').click();
+        //Using xpath 
+        await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View[1]/android.view.View[2]/android.view.View[3]/android.view.View[5][@index="6"]').click();
 
 
     } )
+
+
+
+
+
+
+
+
+
+
     it('Delete note', async() => {
         //click on skip tutorial
         await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip"]').click();

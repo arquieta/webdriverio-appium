@@ -27,7 +27,7 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/Android real app/**/*.js'
+        './test/specs/WebView/**/*.js'
         
     ],
     // Patterns to exclude.
