@@ -9,7 +9,7 @@ describe ('Web browser access',  () => {
         await $('//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/icon_nav"]').click();
         await $('//*[@text="Like us on Facebook"]').click();
         //Using xpath 
-        await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View[1]/android.view.View[2]/android.view.View[3]/android.view.View[5][@index="6"]').click();
+        await $('//android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View[1]/android.view.View[2]/android.view.View[3]/android.view.View[5]').click();
 
 
     } )

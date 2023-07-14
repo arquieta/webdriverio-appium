@@ -26,9 +26,9 @@ exports.config = {
  key: process.env.BROWSERSTACK_KEY,
 
 
-    specs: [
-        // ToDo: define location for spec files here
-        './test/specs/WebView/**/*.js'
+ specs: [
+    // ToDo: define location for spec files here
+    './test/specs/WebView/**/*.js'
         
     ],
     // Patterns to exclude.
