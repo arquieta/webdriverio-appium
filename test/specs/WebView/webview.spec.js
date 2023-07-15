@@ -10,6 +10,21 @@ describe ('Web browser access',  () => {
         await $('//*[@text="Like us on Facebook"]').click();
         //Using xpath 
         await $('//android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View[1]/android.view.View[2]/android.view.View[3]/android.view.View[5]').click();
+        
+        //set right context because we're changing from app to webview
+        //get context
+        console.log(await driver.getContext());
+
+        //get all contexts
+        driver.pause(2000)
+        console.log(await driver.getContexts());
+
+        //switch context to webview
+        await driver.switchContext('WEBVIEW_chrome')
+
+
+        const coverImage = await $('.img.contain');
+        await expect(coverImage).toBeDisplayed()
 
 
     } )
